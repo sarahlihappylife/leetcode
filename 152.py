@@ -5,13 +5,13 @@ class Solution(object):
         :rtype: int
         """
         
-        curMax = curMin = maxProduct = nums[0]
+        curMax = curMin = res = nums[0]
         
-        for num in nums[1:]:
-            if num < 0:
+        for i in xrange(1, len(nums)):
+            if nums[i] < 0:
                 curMax, curMin = curMin, curMax
-            curMax = max(curMax * num, num)
-            curMin = min(curMin * num, num)
-            maxProduct = max(curMax, maxProduct)
+            curMax = max(curMax * nums[i], nums[i])
+            curMin = min(curMin * nums[i], nums[i])
+            res = max(curMax, res)
             
-        return maxProduct
+        return res
