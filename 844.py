@@ -17,7 +17,7 @@ class Solution(object):
                     else:
                         yield ch
                 
-        iteratorS, iteratorT = map(iterator, [S, T])
+        iteratorS, iteratorT = iterator(S), iterator(T)
         chS, chT = next(iteratorS, None), next(iteratorT, None)
         while chS or chT:
             if chS != chT:
